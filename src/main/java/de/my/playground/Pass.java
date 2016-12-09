@@ -4,6 +4,9 @@ import com.sun.istack.internal.Nullable;
 
 import javax.xml.bind.annotation.XmlElement;
 
+/**
+ * Java is pass-by-value.
+ * */
 public class Pass {
     public static void main(String[] args) {
         Dog d = new Dog("Max");
