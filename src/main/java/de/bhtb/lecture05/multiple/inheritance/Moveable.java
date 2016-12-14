@@ -20,4 +20,5 @@ public interface Moveable {
     default void moveVertically(int distance) {
         setY(getY() + distance);
     }
+
 }
