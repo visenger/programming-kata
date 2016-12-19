@@ -47,7 +47,20 @@ public class SocketServer {
             }
 
         } catch (IOException e) {
+
+            String className = e.getClass().getName();
+            String exceptionMessage = e.getMessage();
+            String str = e.toString();
+
+            String info = String
+                    .format(" Class name: %s, the message: %s, exception sring: %s",
+                            className,
+                            exceptionMessage,
+                            str);
+            System.out.println(info);
+
             e.printStackTrace();
+
         } finally {
             if (executor != null) executor.shutdown();
         }

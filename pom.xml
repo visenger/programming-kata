@@ -7,6 +7,12 @@
     <groupId>de.berlin.beuth</groupId>
     <artifactId>oop-programming</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <junit.version>4.12</junit.version>
+        <guava.version>19.0</guava.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -20,10 +26,6 @@
         </plugins>
     </build>
 
-    <properties>
-        <junit.version>4.12</junit.version>
-        <guava.version>19.0</guava.version>
-    </properties>
 
     <dependencies>
         <dependency>
