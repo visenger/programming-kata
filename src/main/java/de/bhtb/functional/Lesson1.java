@@ -1,10 +1,10 @@
 package de.bhtb.functional;
 
-import de.bhtb.lecture05.StringSplitter;
 
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Lesson1 {
     /**
@@ -46,6 +46,21 @@ public class Lesson1 {
 
         Optional<String> reduce = list.stream().map(s -> String.valueOf(s.charAt(0))).reduce(String::concat);
         System.out.println("reduce = " + reduce.get());
+
+        Stream<Character> characterStream = list.stream().map(s -> s.charAt(0));
+        String s = characterStream.collect(StringBuilder::new,
+                StringBuilder::append,
+                StringBuilder::append).toString();
+        System.out.println("more strings = " + s);
+
+        String str2 = characterStream.collect(
+                () -> new StringBuilder(), /* Supplier: OutputResult -> what we want to have at the end of the collection*/
+                (acc, ch) -> acc.append(ch), /* BiConsumer: How to accumulate -> how the accumulator and element interact with each other */
+                (sb1, sb2) -> sb1.append(sb2)) /* BiConsumer: How to combine -> intermediate results need to be combined */
+                .toString();
+
+        System.out.println("2. more strings = " + str2);
+
     }
 
     /**
