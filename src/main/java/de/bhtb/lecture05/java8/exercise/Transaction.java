@@ -3,8 +3,8 @@ package de.bhtb.lecture05.java8.exercise;
 /**
  * Created by visenger on 09/12/16.
  */
-public class Transaction {
 
+public class Transaction {
     private final Trader trader;
     private final int year;
     private final int value;
