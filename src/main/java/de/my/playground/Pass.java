@@ -1,9 +1,5 @@
 package de.my.playground;
 
-import com.sun.istack.internal.Nullable;
-
-import javax.xml.bind.annotation.XmlElement;
-
 /**
  * Java is pass-by-value.
  * */

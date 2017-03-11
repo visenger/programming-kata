@@ -24,6 +24,7 @@ public class EMailCrawler {
             URL webUrl = new URL(url);
             Scanner scanner = new Scanner(webUrl.openStream());
 
+
             Pattern pattern = Pattern.compile("[\\w|-]+@\\w[\\w|-]*\\.[a-z]{2,3}");
 
             while (scanner.hasNextLine()) {
