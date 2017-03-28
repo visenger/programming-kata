@@ -1,4 +1,4 @@
-package de.bhtb.external.resources;
+package de.bhtb.data.formats;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
