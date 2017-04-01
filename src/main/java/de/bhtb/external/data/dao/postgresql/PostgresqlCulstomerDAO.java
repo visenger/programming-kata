@@ -34,13 +34,12 @@ public class PostgresqlCulstomerDAO implements CustomerDAO {
     public Customer findCustomer(String id) {
         Customer customer = null;
         String query = String.format("SELECT tid, a, b FROM tb_simpleabc WHERE tid=%s;", id);
-        //A Statement is an interface that represents a SQL statement.
+        //A Statement is an interface that represents an SQL statement.
         try (Statement stmt = con.createStatement()) {
             ResultSet result = stmt.executeQuery(query);
             while (result.next()) {
                 int tid = result.getInt("tid");
                 String a = result.getString("a");
-                String b = result.getString("b");
                 customer = new Customer(tid, a);
             }
         } catch (SQLException e) {

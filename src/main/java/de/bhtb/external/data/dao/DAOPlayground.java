@@ -5,9 +5,7 @@ import de.bhtb.external.data.dao.entities.CustomerDAO;
 
 import java.util.Optional;
 
-/**
- * Created by visenger on 28/03/17.
- */
+
 public class DAOPlayground {
 
     public static void main(String... args) {

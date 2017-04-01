@@ -25,7 +25,8 @@ public class PostgresqlDAOFactory extends DAOFactory {
     }
 
     private Connection getConnection(String userName, String pwd) throws SQLException, ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
+       // Class.forName("org.postgresql.Driver");
+        DriverManager.registerDriver(new org.postgresql.Driver());
         //todo: Best practises: Use connection pool to obtain a connection;
         return DriverManager.getConnection(URL, userName, pwd);
     }

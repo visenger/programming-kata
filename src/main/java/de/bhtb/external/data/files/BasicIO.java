@@ -15,7 +15,7 @@ public class BasicIO {
         FileOutputStream fos = null;
 
         try {
-            fis = new FileInputStream("src/main/resources/Sonne.txt");
+            fis = new FileInputStream("src/main/resources/sonne.txt");
             fos = new FileOutputStream("src/main/resources/output.txt");
             int c;
 
