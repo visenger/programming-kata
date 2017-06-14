@@ -1,4 +1,4 @@
-package de.bhtb.data.structures;
+package de.bhtb.data.structures.stack.linked;
 
 /**
  * Created by visenger on 14.06.17.

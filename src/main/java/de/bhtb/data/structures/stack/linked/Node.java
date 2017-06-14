@@ -1,4 +1,4 @@
-package de.bhtb.data.structures;
+package de.bhtb.data.structures.stack.linked;
 
 public class Node<E> {
     private E info;
