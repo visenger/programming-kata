@@ -1,0 +1,51 @@
+package de.bhtb.data.structures;
+
+/**
+ * Created by visenger on 14.06.17.
+ */
+public class LinkedStack<E> implements MyStack<E> {
+    private Node<E> top;
+    private int size;
+
+    public LinkedStack() {
+        this.top = null;
+        this.size = 0;
+    }
+
+
+    @Override
+    public boolean isEmpty() {
+        return this.top == null;
+    }
+
+    @Override
+    public void push(E element) {
+        Node<E> node = new Node<>(element, top);
+        this.top = node;
+        size++;
+    }
+
+    @Override
+    public E pop() {
+        E result = null;
+
+        if (!isEmpty()) {
+            result = top.getInfo();
+            this.top = top.getNext();
+            size--;
+        }
+
+        return result;
+    }
+
+    @Override
+    public E top() {
+        if (isEmpty()) return null;
+        return top.getInfo();
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+}
