@@ -15,6 +15,7 @@ public class ExpressionEvaluation {
 
     }
 
+    //TODO: implement arithmetic operations with Enums (see Effective Java)
     private static double eval(String input) {
         Stack<Double> vals = new Stack<>();
         Stack<String> operators = new Stack<>();
@@ -43,7 +44,7 @@ public class ExpressionEvaluation {
 
     private static boolean isOperand(String token) {
         boolean isNumber = token.matches("(?:\\d*\\.)?\\d+");
-       // System.out.println("token = " + token + " isOperand " + isNumber);
+        // System.out.println("token = " + token + " isOperand " + isNumber);
         return isNumber;
     }
 

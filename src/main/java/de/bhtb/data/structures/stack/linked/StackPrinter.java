@@ -6,22 +6,22 @@ package de.bhtb.data.structures.stack.linked;
 public class StackPrinter {
 
     public static void main(String... args) {
-        LinkedStack<String> stringLinkedStack = new LinkedStack<>();
+        MyStack<String> stringMyStack = new MyStack<>();
 
-        stringLinkedStack.push("a");
-        stringLinkedStack.push("b");
-        stringLinkedStack.push("c");
+        stringMyStack.push("a - first");
+        stringMyStack.push("b - second");
+        stringMyStack.push("c - third");
 
-        printStack(stringLinkedStack);
+        printStack(stringMyStack);
     }
 
-    private static void printStack(LinkedStack<String> stringLinkedStack) {
-        if (stringLinkedStack.isEmpty()) {
+    private static void printStack(MyStack<String> stringMyStack) {
+        if (stringMyStack.isEmpty()) {
             System.out.println("empty stack");
         } else {
-            String topElement = stringLinkedStack.pop();
+            String topElement = stringMyStack.pop();
             System.out.println(topElement);
-            printStack(stringLinkedStack);
+            printStack(stringMyStack);
         }
     }
 }
