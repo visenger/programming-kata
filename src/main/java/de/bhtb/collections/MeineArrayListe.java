@@ -28,14 +28,18 @@ public class MeineArrayListe<E> {
             System.err.println("out of array range");
         } else {
             E[] firstPart = Arrays.copyOfRange(list, 0, i);
-            E[] secondPart = Arrays.copyOfRange(list, i + 1, list.length + 1);
+            E[] secondPart = Arrays.copyOfRange(list, i + 1, list.length);
 
-            newArray = (E[]) new Object[capacity - 1];
 
-            System.arraycopy(firstPart, 0, newArray, 0, firstPart.length);
-            System.arraycopy(secondPart, 0, newArray, firstPart.length - 1, secondPart.length);
+            int firstLength = firstPart.length;
+            int secondLength = secondPart.length;
+            newArray = (E[]) new Object[firstLength + secondLength];
+
+            System.arraycopy(firstPart, 0, newArray, 0, firstLength);
+            System.arraycopy(secondPart, 0, newArray, firstLength, secondLength);
         }
-        return newArray;
+        list = newArray;
+        return list;
     }
 
     public static void main(String... args) {
@@ -45,5 +49,6 @@ public class MeineArrayListe<E> {
         meineArrayListe.addElement(2, "3");
         meineArrayListe.addElement(3, "4");
         meineArrayListe.deleteElement(1);
+        System.out.println("meine Array List = " + meineArrayListe);
     }
 }

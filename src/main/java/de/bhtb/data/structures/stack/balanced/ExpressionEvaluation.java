@@ -9,7 +9,7 @@ import java.util.Stack;
 public class ExpressionEvaluation {
 
     public static void main(String... args) {
-        String s1 = "( ( 1 + 1 ) * 10 )";
+        String s1 = "( ( ( 2 + 5 ) * ( 4 * 5 ) ) + 1 )";
         System.out.println("expression: " + s1);
         System.out.println(s1 + "  =  " + eval(s1));
 
@@ -29,12 +29,13 @@ public class ExpressionEvaluation {
                 //nothing happens
             } else if (isOperator(token)) {
                 operators.push(token);
-            } else if (isOperand(token)) {
-                vals.push(Double.valueOf(token));
+
             } else if (token.equals(")")) {
                 String operator = operators.pop();
                 if (operator.equals("+")) vals.push(vals.pop() + vals.pop());
-                if (operator.equals("*")) vals.push(vals.pop() * vals.pop());
+                else if (operator.equals("*")) vals.push(vals.pop() * vals.pop());
+            } else {
+                vals.push(Double.parseDouble(token));
             }
         }
 
@@ -42,11 +43,6 @@ public class ExpressionEvaluation {
         return vals.pop();
     }
 
-    private static boolean isOperand(String token) {
-        boolean isNumber = token.matches("(?:\\d*\\.)?\\d+");
-        // System.out.println("token = " + token + " isOperand " + isNumber);
-        return isNumber;
-    }
 
     private static boolean isOperator(String token) {
         return token.equals("+") || token.equals("*");

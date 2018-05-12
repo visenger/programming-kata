@@ -10,6 +10,7 @@ public class IdentifyMyParts {
 }
 
 class TesterForIdentifyer {
+    private static final double KURS = 1.29535;
     public static void main(String... args) {
         IdentifyMyParts a = new IdentifyMyParts();
         IdentifyMyParts b = new IdentifyMyParts();
@@ -25,6 +26,8 @@ class TesterForIdentifyer {
         System.out.println("b.x = " + b.x);
 
         System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
+
+        System.out.println("KURS = " + TesterForIdentifyer.KURS);
 
 
     }
